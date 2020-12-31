@@ -15,16 +15,19 @@ class I
 				
 			}
 		}
-
-		int src = 0;
+	for(int k=0;k<n;k++)
+	{
+		// int k = 0;
 		int [] dist = new int[n];
 		for(int i=0;i<n;i++) dist[i] = Integer.MAX_VALUE;
-		dist[src] =0;
+		dist[k] =0;
 
-		for(int i=1;i<n;i++)
+		for(int i=0;i<n;i++)
 		{
+			// if(i==k) continue;
 			for(int j=0;j<n;j++)
 			{
+
 				if(arr[i][j] ==1)
 				{
 					if(dist[j] !=Integer.MAX_VALUE && dist[j]+1<dist[i])
@@ -35,10 +38,10 @@ class I
 			}
 		}
 		System.out.println("Vertex Distance from Source"); 
-		System.err.println("Here A is the Source ");
+		System.err.println("Here "+(char)('A'+k) +" is the Source ");
         for (int i = 0; i < n; ++i) 
         System.out.println((char)('A' + i) + "\t\t" + dist[i]);
-
+	}
 
 		
 	}
